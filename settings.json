@@ -1,0 +1,11 @@
+{
+    "java.configuration.maven.userSettings": "",
+    "java.configuration.runtimes": [
+        {
+            "name": "JavaSE-21",
+            "path": "/ruta/a/java-21"
+        }
+    ],
+    "java.import.gradle.enabled": true,
+    "java.import.gradle.wrapper.enabled": true
+}
