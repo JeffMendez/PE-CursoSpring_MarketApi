@@ -54,4 +54,8 @@ public class MarketEmApplication {
 
 	// Swagger
 	// http://localhost:4000/market/api/swagger-ui/index.html
+
+	// Produccion
+	// 1) Ejecutar el grandle -> tasks -> build -> bootJar
+	// 2) java -jar "-Dspring.profiles.active=pdn" build/libs/market-em-1.0.jar
 }
