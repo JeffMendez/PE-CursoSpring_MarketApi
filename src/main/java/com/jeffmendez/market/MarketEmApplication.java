@@ -52,4 +52,6 @@ public class MarketEmApplication {
 	// lsnrctl status
 	// En Oracle para dar permisos al usuario nuevo GRANT CREATE SESSION TO market;
 
+	// Swagger
+	// http://localhost:4000/market/api/swagger-ui/index.html
 }
