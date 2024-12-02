@@ -3,6 +3,7 @@ package com.jeffmendez.market.persistence.entity;
 import java.time.LocalDateTime;
 import java.util.List;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -19,11 +20,11 @@ public class Compra {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ID_COMPRAS")
-    private Integer idCompras;
+    @Column(name = "ID_COMPRA")
+    private Integer idCompra;
 
     @Column(name = "ID_CLIENTE")
-    private Integer idCliente;
+    private String idCliente;
 
     @Column(name = "FECHA")
     private LocalDateTime fecha;
@@ -42,23 +43,23 @@ public class Compra {
     @JoinColumn(name = "ID_CLIENTE", insertable = false, updatable = false)
     private Cliente cliente;
 
-    @OneToMany(mappedBy = "compra")
+    @OneToMany(mappedBy = "compra", cascade = {CascadeType.ALL})
     private List<CompraProducto> productos;
 
     // GETTERS AND SETTERS
-    public Integer getIdCompras() {
-        return idCompras;
+    public Integer getIdCompra() {
+        return idCompra;
     }
 
-    public void setIdCompras(Integer idCompras) {
-        this.idCompras = idCompras;
+    public void setIdCompra(Integer idCompra) {
+        this.idCompra = idCompra;
     }
 
-    public Integer getIdCliente() {
+    public String getIdCliente() {
         return idCliente;
     }
 
-    public void setIdCliente(Integer idCliente) {
+    public void setIdCliente(String idCliente) {
         this.idCliente = idCliente;
     }
 
@@ -94,5 +95,19 @@ public class Compra {
         this.estado = estado;
     }
 
-    
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
+
+    public List<CompraProducto> getProductos() {
+        return productos;
+    }
+
+    public void setProductos(List<CompraProducto> productos) {
+        this.productos = productos;
+    }
 }

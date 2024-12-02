@@ -17,7 +17,7 @@ public class Cliente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID")
-    private Integer idCliente;
+    private String idCliente;
 
     @Column(name = "NOMBRE")
     private String nombre;
@@ -31,7 +31,7 @@ public class Cliente {
     @Column(name = "DIRECCION")
     private String direccion;
 
-    @Column(name = "CORREO_ELETRONICO")
+    @Column(name = "CORREO_ELECTRONICO")
     private String correoElectronico;
 
     // FOREIGN KEYS
@@ -39,11 +39,11 @@ public class Cliente {
     private List<Compra> compras;
 
     // GETTERS AND SETTERS
-    public Integer getIdCliente() {
+    public String getIdCliente() {
         return idCliente;
     }
 
-    public void setIdCliente(Integer idCliente) {
+    public void setIdCliente(String idCliente) {
         this.idCliente = idCliente;
     }
 

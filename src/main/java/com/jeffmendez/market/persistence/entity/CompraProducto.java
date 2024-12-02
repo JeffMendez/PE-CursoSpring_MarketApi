@@ -5,10 +5,11 @@ import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.MapsId;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "COMPRAS_PRODUCTO")
+@Table(name = "COMPRAS_PRODUCTOS")
 public class CompraProducto  {
 
     @EmbeddedId
@@ -25,6 +26,7 @@ public class CompraProducto  {
 
     // FOREIGN KEYS
     @ManyToOne
+    @MapsId("idCompra")
     @JoinColumn(name = "ID_COMPRA", insertable = false, updatable = false)
     private Compra compra;
 
@@ -63,5 +65,21 @@ public class CompraProducto  {
 
     public void setEstado(String estado) {
         this.estado = estado;
+    }
+
+    public Compra getCompra() {
+        return compra;
+    }
+
+    public void setCompra(Compra compra) {
+        this.compra = compra;
+    }
+
+    public Compra getProducto() {
+        return producto;
+    }
+
+    public void setProducto(Compra producto) {
+        this.producto = producto;
     }
 }
